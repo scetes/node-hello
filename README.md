@@ -10,7 +10,7 @@ Pre-built image is in [Docker Hub](https://hub.docker.com/r/scetes/ubuntu-node-h
 To build it yourself
 
 #### Step 1:  Get a Docker Machine running
-Install [Docker engine](http://docs.docker.com/engine/installation/).  This will explain the basics of Docker and how to start a Docker Host.  On OSX or Windows a Docker Host runs as a VM in [Virtual Box](https://www.virtualbox.org).  Don't worry, the Docker install includes Virtual Box.
+Docker has great [documentation](http://docs.docker.com/engine/installation/) for installation, examples and understanding the basics.  On OSX or Windows a Docker Host runs as a VM in [Virtual Box](https://www.virtualbox.org).  Don't worry, the Docker install includes Virtual Box.
 #### Step 2: Get the sample code
 Follow Docker instructions for your OS to start your Docker host and open a terminal window.
 
