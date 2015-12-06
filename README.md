@@ -17,11 +17,11 @@ Follow Docker instructions for your OS to start your Docker host and open a term
 Clone the three files in this GitHub repo to a directory on your local filesystem.
 
 #### Step 3: Build the Docker image
-Change to the directory, and build your Docker image with this command (noting that `scetes/ubuntu-node-hello is the image name and you can change that to your own name):
+Change to the directory, and build your Docker image with this command (noting that `scetes/ubuntu-node-hello` is the image name I used, but you can change that to your own name):
 
 `$ docker build —t scetes/ubuntu-node-hello .`
 
-if all goes well, terminal log will start like this:
+if all goes well, the terminal output will start with something like this:
 
 ```
 Sending build context to Docker daemon 81.92 kB
