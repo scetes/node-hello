@@ -8,7 +8,7 @@ var express = require("express"),
 // Config
 
 app.get('/api', function (req, res) {
-  res.send('hello from dockeroo');
+  res.send('hello from dockeroo!');
 });
 
 // Launch server
