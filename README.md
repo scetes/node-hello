@@ -5,12 +5,11 @@ Use these three files to try your first Docker container.
 * `pacakge.json` defines the NodeJS modules to install (by npm).  Express is the only module used in this demo.
 * `index.js` is the application code.
 
-Pre-built image is in [Docker Hub](https://hub.docker.com/r/scetes/ubuntu-node-hello/). 
-
-To build it yourself
-
 #### Step 1:  Get a Docker Machine running
 Docker has great [documentation](http://docs.docker.com/engine/installation/) for installation, examples and understanding the basics.  On OSX or Windows a Docker Host runs as a VM in [Virtual Box](https://www.virtualbox.org).  Don't worry, the Docker install includes Virtual Box.
+
+If you are impatient and want to run the container, you can skip to Step 5.  It will pull down the image from [Docker Hub](https://hub.docker.com/r/scetes/ubuntu-node-hello/)..  
+
 #### Step 2: Get the sample code
 Follow Docker instructions for your OS to start your Docker host and open a terminal window.
 
@@ -49,11 +48,7 @@ Start a Docker container from the image you built in the previous step (noting t
 ### Step 5. Use it
 When you started the container, it started a NodeJS app.  The app is listening on port 8088 for HTTP requests with one route `/api`.  In a browser, open `http://[host]:[port]/api`, and you should get response `hello from docker`.
 
-The **host** is the IP of your Docker container.  If you're running on Linux, then the container host is the same as your Linux host and you can use 127.0.0.1.  
-
-If you're running on OSX or Windows, you need to find the IP of the Virtual Box VM.
-
-You can find the IP this by running:
+The **host** is the IP of your Docker container.  If you're running directly on Linux, then the host IP is the same as the Docker container IP.    If you're running on OSX or Windows, the container runs in a Virtual Box VM, so you need to find the IP of the Virtual Box VM.  One way to find it is to run this cmd in your Docker CLI: 
 
 `$ docker-machine ls`
  which will show something like this:
