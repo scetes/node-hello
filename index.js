@@ -16,7 +16,7 @@ var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 
-  res.send('hello from docker!' + today);
+  res.send('hello from dockeroo! ' + today);
 });
 
 // Launch server
