@@ -8,7 +8,15 @@ var express = require("express"),
 // Config
 
 app.get('/api', function (req, res) {
-  res.send('hello from dockerooney!');
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+
+  res.send('hello from docker!' + today);
 });
 
 // Launch server
