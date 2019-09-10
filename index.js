@@ -16,9 +16,9 @@ var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 
-factorialize(50);
+factorialize(2000);
 
-  res.send('hello.  Running factorial! ' + today);
+  res.send('hello.  Running factorial 2000! ' + today);
 });
 
 
