@@ -16,8 +16,20 @@ var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 
-  res.send('hello from dockeroo! ' + today);
+factorialize(50);
+
+  res.send('hello.  Running factorial! ' + today);
 });
+
+
+function factorialize(num) {
+  if (num === 0 || num === 1)
+    return 1;
+  for (var i = num - 1; i >= 1; i--) {
+    num *= i;
+  }
+  return num;
+}
 
 // Launch server
 
