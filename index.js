@@ -13,12 +13,15 @@ var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
+var ss = String(today.getSeconds()).padStart(2,'0');
+var hms = String(today.getMinutes()).padStart(2, '0') + ":" + String(today.getSeconds()).padStart(2, '0');
+var factr = 800000;
 
-today = mm + '/' + dd + '/' + yyyy;
+today = yyyy + '-' + mm + '-' + dd + '-' + hms;
 
-factorialize(80000);
+factorialize(factr);
 
-  res.send('hello.  Running factorial! ' + today);
+  res.send('hello.  Running factorial(' + factr + ') ' + today);
 });
 
 
