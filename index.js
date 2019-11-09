@@ -21,7 +21,7 @@ today = yyyy + '-' + mm + '-' + dd + '-' + hms;
 
 factorialize(factr);
 
-  res.send('hello.  Running factorial(' + factr + ') ' + today);
+  res.send('Howdy.  Running factorial(' + factr + ') ' + today);
 });
 
 
