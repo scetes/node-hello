@@ -7,7 +7,7 @@ var express = require("express"),
 
 // Config
 
-app.get('/api', function (req, res) {
+app.get('/api/:factornum', function (req, res) {
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -15,24 +15,23 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 var ss = String(today.getSeconds()).padStart(2,'0');
 var hms = String(today.getMinutes()).padStart(2, '0') + ":" + String(today.getSeconds()).padStart(2, '0');
-var factr = 800000;
+var factr = Number(req.params.factornum);
 
 today = yyyy + '-' + mm + '-' + dd + '-' + hms;
 
 factorialize(factr);
 
-  res.send('Howdy.  I am v2.  Faster running factorial(' + factr + ') ' + today);
+  //res.send('Howdy.  I am v2.  Faster running factorial(' + factr + ') ' + today);
+
+  res.json({"factor": factr, "answer": factored});
 });
 
 
 function factorialize(num) {
   if (num === 0 || num === 1)
     return 1;
-  for (var i = num - 1; i >= 1; i--) {
-    num *= i;
-    //console.log("iteration: " + i)
-  }
-  return num;
+
+  return (num != 1) ? num * factorialize(num - 1) : 1;
 }
 
 // Launch server
