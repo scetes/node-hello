@@ -1,7 +1,6 @@
 var express = require("express"),
     path = require("path");
-
-  app = express();
+    app = express();
 
 
 app.get('/api/:factornum', function (req, res) {
@@ -18,8 +17,6 @@ var factr = Number(req.params.factornum);
 today = yyyy + '-' + mm + '-' + dd + '-' + hms;
 
 factored = factorialize(factr);
-
-  //res.send('hello.  Running factorial(' + factr + ') ' + today + '  = ' + factored);
 
   res.json({"factor": factr, "answer": factored});
 });
