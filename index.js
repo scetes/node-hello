@@ -4,9 +4,6 @@ var express = require("express"),
   app = express();
 
 
-
-// Config
-
 app.get('/api/:factornum', function (req, res) {
 
 var today = new Date();
