@@ -1,7 +1,6 @@
 var express = require("express"),
     path = require("path");
-
-  app = express();
+    app = express();
 
 <<<<<<< HEAD
 const request = require('request');
@@ -56,8 +55,6 @@ function factorialize(num) {
 today = yyyy + '-' + mm + '-' + dd + '-' + hms;
 
 factored = factorialize(factr);
-
-  //res.send('hello.  Running factorial(' + factr + ') ' + today + '  = ' + factored);
 
   res.json({"factor": factr, "answer": factored});
 });
