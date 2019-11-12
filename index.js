@@ -1,39 +1,46 @@
 var express = require("express"),
     path = require("path");
 
-	app = express();
+  app = express();
 
-
-
-// Config
-
-
+<<<<<<< HEAD
 const request = require('request');
 
-
 app = express();
+=======
 
-function getRoutes(callback){
-    request('http://node-hello-alb-1752502560.us-east-1.elb.amazonaws.com:8088/api/9', function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            result = JSON.stringify(JSON.parse(body));          
-            return callback(null, result);
-        } else {            
-            return callback(error, null);;
-        }
-    });
+app.get('/api/:factornum', function (req, res) {
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var ss = String(today.getSeconds()).padStart(2,'0');
+var hms = String(today.getMinutes()).padStart(2, '0') + ":" + String(today.getSeconds()).padStart(2, '0');
+var factr = Number(req.params.factornum);
+
+
+today = yyyy + '-' + mm + '-' + dd + '-' + hms;
+
+factored = factorialize(factr);
+
+  //res.send('hello.  Running factorial(' + factr + ') ' + today + '  = ' + factored);
+>>>>>>> ef7051e580c70213cf834bd8b662542de417d8fd
+
+  res.json({"factor": factr, "answer": factored});
+});
+
+
+function factorialize(num) {
+  if (num === 0 || num === 1)
+    return 1;
+
+  return (num != 1) ? num * factorialize(num - 1) : 1;
+
 }
 
-app.get('/factor9', function(req, res) {
-
-    getRoutes(function(err, data){ 
-        if(err) return res.send(err);       
-        res.send('Response from Factor function: ' + data);
-    });
-
-});
 // Launch server
 
 app.listen(8088);
 
-console.log("node app listening");
+console.log("node app listening on 8088");
